@@ -1,0 +1,58 @@
+<div class="container mt-4">
+    <div class="text-center mb-4">
+        <h2>Reporte de servicios</h2>
+    </div>
+    <hr>
+    <form [formGroup]="reportingform" method="POST" (ngSubmit)="onReporting()">
+        <div class="form-row">
+            <div class="form-group col-6">
+                <label for="idTecni">Identificación tecnico</label>
+                <input formControlName="idTecni" placeholder="Ingrese identifación de tecnico" type="text" name="idTecni" class="form-control" id="idTecni" >
+                <span class="messagealertstext" *ngIf="f.idTecni.invalid && 
+                (f.idTecni.dirty || f.idTecni.touched)">
+                     ¡¡¡Identificación del tecnico obligatoria!!!
+                </span>
+            </div>
+            <div class="form-group col-6">
+                <label for="idServi">Identificación del servicio</label>
+                <input formControlName="idServi" type="text" placeholder="Ingrese identifación de tecnico" name="idServi" class="form-control" id="idServi">
+                <span class="messagealertstext" *ngIf="f.idServi.invalid && 
+                (f.idServi.dirty || f.idServi.touched)">
+                     ¡¡¡Identificación del servicio obligatoria!!!
+                </span>
+            </div>
+            <div class="form-group col-6">
+                <label for="datStart">Fecha y hora de inicio</label>
+                <input formControlName="datStart" type="date" placeholder="Ingrese fecha y hora de inicio" name="datStart" class="form-control" id="datStart">
+                <span class="messagealertstext" *ngIf="f.datStart.invalid && 
+                (f.datStart.dirty || f.datStart.touched)">
+                     ¡¡¡Fecha de entrada obligatoria!!!
+                </span>
+            </div>
+            <div class="form-group col-6">
+                <label for="datEnd">Fecha y hora de finalización</label>
+                <input formControlName="datEnd" type="date" placeholder="Ingrese fecha y hora de finalización" name="datEnd" class="form-control" id="datEnd">
+                <span class="messagealertstext" *ngIf="f.datEnd.invalid && 
+                (f.datEnd.dirty || f.datEnd.touched)">
+                     ¡¡¡Fecha de salida obligatoria!!!
+                </span>
+            </div>
+            <div class="form-group col-12">
+                <label for="Descript">Descripción del reporte</label>
+                <textarea formControlName="Descript" name="Descript" class="form-control" id="Descript" id="Descript" rows="3">
+
+                </textarea>         
+                <span class="messagealertstext" *ngIf="f.Descript.invalid && 
+                (f.Descript.dirty || f.Descript.touched)">
+                     ¡¡¡Descripción obligatoria!!!
+                </span>       
+                <span *ngIf="f.validateDate" ></span>
+            </div>
+        </div>
+        <div class="float-right">
+            <button class="btn btn-access" [disabled]="f.Descript.invalid" type="submit">REPORTAR</button>
+        </div>
+    </form>
+</div>
+
+    

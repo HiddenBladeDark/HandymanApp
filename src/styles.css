@@ -1,0 +1,32 @@
+/* classic css navbar */
+/* header */
+.blockcustom{
+    background-color: rgb(138 189 253 / 85%);
+}
+.blockcustom a{
+    color: #fff !important;
+    font-weight: 700;
+}
+.active{
+    font-weight: bold;
+    transform: scale(1.2);
+    border-bottom: 2px solid #fff;
+}
+.logonav{
+    font-weight: bold;
+    font-size: 26px !important;
+}
+
+/* content custom */
+.messagealertstext{
+    text-align: center;
+    display: block;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+.btn-access{
+    color: #fff !important;
+    background-color: rgb(138 189 253) !important;
+    border-color: rgb(138 189 253) !important;
+}
