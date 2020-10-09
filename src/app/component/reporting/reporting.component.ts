@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild  } from '@angular/core';
 import { FormsModule,ReactiveFormsModule,FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 // mydatapicker
-import { IMyDpOptions } from "mydatepicker";
+import { NgbDateStruct, NgbCalendar, NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
 // service
 import { IasrestService } from '../../services/iasrest.service'
-
+// models
+import { Reporting } from '../../models/IAS'
 
 @Component({
   selector: 'app-reporting',
@@ -13,12 +14,12 @@ import { IasrestService } from '../../services/iasrest.service'
 })
 export class ReportingComponent implements OnInit {
   // propiedad
+
   public message:string;
   public reportingform:any;
-//   public myDatePickerOptions: IMyDpOptions = {
-//     // other options...
-//     dateFormat: 'dd.mm.yyyy',
-// };  
+  public reporting:Reporting;
+
+
 constructor(private formbuilder:FormBuilder,private reportingService:IasrestService) {
     // form reactive
     this.reportingform = this.formbuilder.group({

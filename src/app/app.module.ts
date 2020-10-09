@@ -9,11 +9,11 @@ import { JobhourComponent } from './component/jobhour/jobhour.component';
 // forms
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 // datepicker
-import { MyDatePickerModule } from 'mydatepicker';
+// import { MyDatePickerModule } from 'mydatepicker';
 // peticiones
-import { HttpClientModule, HttpClient } from '@angular/common/http'
-
-
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+// datapicker
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,       
-    HttpClientModule
+    HttpClientModule, 
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
