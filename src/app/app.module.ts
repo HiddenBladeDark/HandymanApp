@@ -8,6 +8,12 @@ import { HeadersComponent } from './component/headers/headers.component';
 import { JobhourComponent } from './component/jobhour/jobhour.component';
 // forms
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+// datepicker
+import { MyDatePickerModule } from 'mydatepicker';
+// peticiones
+import { HttpClientModule, HttpClient } from '@angular/common/http'
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +26,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,       
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

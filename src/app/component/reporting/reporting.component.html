@@ -6,11 +6,11 @@
     <form [formGroup]="reportingform" method="POST" (ngSubmit)="onReporting()">
         <div class="form-row">
             <div class="form-group col-6">
-                <label for="idTecni">Identificación tecnico</label>
+                <label for="idTecni">Identificación técnico</label>
                 <input formControlName="idTecni" placeholder="Ingrese identifación de tecnico" type="text" name="idTecni" class="form-control" id="idTecni" >
                 <span class="messagealertstext" *ngIf="f.idTecni.invalid && 
                 (f.idTecni.dirty || f.idTecni.touched)">
-                     ¡¡¡Identificación del tecnico obligatoria!!!
+                     ¡¡¡Identificación del técnico obligatoria!!!
                 </span>
             </div>
             <div class="form-group col-6">
@@ -19,6 +19,17 @@
                 <span class="messagealertstext" *ngIf="f.idServi.invalid && 
                 (f.idServi.dirty || f.idServi.touched)">
                      ¡¡¡Identificación del servicio obligatoria!!!
+                </span>
+            </div>
+
+            <!-- <my-date-picker name="myDate" [options]="myDatePickerOptions"
+                formControlName="myDate">
+            </my-date-picker> -->
+
+            
+            <div *ngIf="this.reportingform.hasError('Datefail')" class="col-12">
+                <span class="messagealertstext">
+                    ¡¡¡Alerta!!!. La fecha de entrada no puede ser mayor a la de salida.
                 </span>
             </div>
             <div class="form-group col-6">
@@ -53,6 +64,13 @@
             <button class="btn btn-access" [disabled]="f.Descript.invalid" type="submit">REPORTAR</button>
         </div>
     </form>
+    <!-- usamos el keyvalue para convertir los object a array -->
+    <div *ngIf="message" class="alert alert-success">
+            Operacion completada, datos almacenados:
+            <div *ngFor="let response of message | keyvalue" >
+                {{response.value}}
+            </div>
+    </div>
 </div>
 
     

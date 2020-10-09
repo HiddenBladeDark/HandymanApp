@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "handymanapp"
+    }
+  },
+  "defaultProject": "handymanapp",
+  "cli": {
+    "analytics": "fedd8360-d929-4408-8207-78948e3364ed"
+  }
 }
