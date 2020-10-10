@@ -12,7 +12,6 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 // import { MyDatePickerModule } from 'mydatepicker';
 // peticiones
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 // datapicker
 
 @NgModule({
@@ -28,7 +27,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     FormsModule,
     ReactiveFormsModule,       
     HttpClientModule, 
-    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

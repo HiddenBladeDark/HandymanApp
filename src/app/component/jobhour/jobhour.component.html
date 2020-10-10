@@ -1,1 +1,35 @@
-<p>jobhour works!</p>
+<div class="container mt-4">
+    <div class="text-center mb-4">
+        <h2>Calcular hora de trabajo</h2>
+    </div>
+    <hr>
+    <form method="get" [formGroup]="calcForm" (ngSubmit)="onCalc()">
+        <div class="form-row">
+            <div class="form-group col-6">
+                <label for="idTecni">Identificación técnico</label>
+                <input formControlName="idTecni" placeholder="Ingrese identifación de tecnico" type="text" name="idTecni" class="form-control" id="idTecni" >
+                <span class="messagealertstext" *ngIf="f.idTecni.invalid && 
+                (f.idTecni.dirty || f.idTecni.touched)">
+                     ¡¡¡Identificación del técnico obligatoria!!!
+                </span>
+            </div>
+            <div class="form-group col-6">
+                <label for="weekNum">semana laborada</label>
+                <input formControlName="weekNum" placeholder="Ingrese semana laborada" type="text" name="weekNum" class="form-control" id="weekNum" >
+                <span class="messagealertstext" *ngIf="f.weekNum.invalid && 
+                (f.weekNum.dirty || f.weekNum.touched)">
+                     ¡¡¡Semana laborada es obligatoria!!!
+                </span>
+            </div>
+        </div>
+        <div class="text-right">
+            <button class="btn btn-access" [disabled]="this.calcForm.invalid" type="submit">REPORTAR</button>
+        </div>
+    </form>
+    <div *ngIf="calcend" >
+        <div *ngFor="let item of calcend">
+            {{item.datStart}} - {{item.datEnd}}
+
+        </div>
+    </div>
+</div>

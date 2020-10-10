@@ -1,7 +1,5 @@
 import { Component, OnInit,ViewChild  } from '@angular/core';
 import { FormsModule,ReactiveFormsModule,FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-// mydatapicker
-import { NgbDateStruct, NgbCalendar, NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
 // service
 import { IasrestService } from '../../services/iasrest.service'
 // models
@@ -14,12 +12,9 @@ import { Reporting } from '../../models/IAS'
 })
 export class ReportingComponent implements OnInit {
   // propiedad
-
   public message:string;
   public reportingform:any;
   public reporting:Reporting;
-
-
 constructor(private formbuilder:FormBuilder,private reportingService:IasrestService) {
     // form reactive
     this.reportingform = this.formbuilder.group({
@@ -53,9 +48,11 @@ constructor(private formbuilder:FormBuilder,private reportingService:IasrestServ
 
   
 }
-
+// validar rango de los date
 function validateDate(group: FormGroup) {
+  // condicion que esten llenos ambos
   if(group.controls.datStart.value && group.controls.datEnd.value) {
+    // condicion si es mayor fecha inicial...
     if(group.controls.datStart.value > group.controls.datEnd.value){
       return { Datefail:true }
     }
