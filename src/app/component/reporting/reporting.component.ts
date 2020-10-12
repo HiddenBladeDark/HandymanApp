@@ -3,7 +3,7 @@ import { FormsModule,ReactiveFormsModule,FormGroup, FormBuilder, FormControl, Va
 // service
 import { IasrestService } from '../../services/iasrest.service'
 // models
-import { Reporting } from '../../models/IAS'
+import { Reporting } from '../../interface/IAS'
 
 @Component({
   selector: 'app-reporting',
@@ -36,6 +36,7 @@ constructor(private formbuilder:FormBuilder,private reportingService:IasrestServ
   onReporting():void{
     // validamos el form
       if(this.reportingform.valid === true){
+        // enviamos las respuestas suscribiendonos para recibir respuesta por parte del back
         this.reportingService.saveReporting(this.reportingform.value).subscribe((response) =>{
             this.message = response
         },(error)=>{

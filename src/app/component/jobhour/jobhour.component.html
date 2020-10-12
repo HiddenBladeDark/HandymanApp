@@ -27,9 +27,33 @@
         </div>
     </form>
     <div *ngIf="calcend" >
-        <div *ngFor="let item of calcend">
-            {{item.datStart}} - {{item.datEnd}}
-
+        <div class="card text-center cardhourtol mt-4">
+            <div class="card-header mytitlecard">
+                HORAS LABORADAS
+            </div>
+            <div class="card-body">
+                <div class="content-hour">
+                    <span>IDENTIFICADOR:</span>
+                    {{calcend.tecniid}}
+                    <hr>
+                </div>
+                <div class="content-hour">
+                    <span>Horario ordinario</span>
+                    LUNES A SABADO HORARIO 7 AM A 8 PM: {{calcend.hour_norm}} HORAS
+                </div>
+                <div class="content-hour">
+                    <span>Horario nocturno</span>
+                    LUNES A SABADO HORARIO 8PM A 7 AM: {{calcend.hour_noct}} HORAS
+                </div>
+                <div class="content-hour">
+                    <span>Horario dominical</span>
+                    DOMINICAL: {{calcend.hour_dom}} HORAS
+                </div>
+                <div class="content-hour text-left">
+                    TOTAL DE HORAS: {{calcend.hour_tol}} HORAS
+                </div>
+                <hr>
+            </div>
         </div>
     </div>
 </div>

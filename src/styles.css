@@ -2,6 +2,7 @@
 /* header */
 .blockcustom{
     background-color: rgb(138 189 253 / 85%);
+    background-image: linear-gradient(to bottom,rgb(0 54 127 / 70%) 10%,rgb(93 50 50 / 0%));
 }
 .blockcustom a{
     color: #fff !important;
@@ -27,6 +28,25 @@
 }
 .btn-access{
     color: #fff !important;
-    background-color: rgb(138 189 253) !important;
+    background-color: rgb(52 117 198) !important;
     border-color: rgb(138 189 253) !important;
+}
+.cardhourtol{
+    font-weight: bold;
+}
+.cardhourtol .mytitlecard{
+    background-color: rgb(138 189 253 / 85%);
+    border-color:rgb(138 189 253 / 85%);;
+}
+.content-hour{
+    display: block;
+}
+.content-hour span{
+    display:block;
+}
+
+
+/* btn */
+.btn.disabled, .btn:disabled {
+    opacity: .60;
 }
